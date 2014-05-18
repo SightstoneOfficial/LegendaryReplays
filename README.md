@@ -3,7 +3,7 @@ LegendaryReplays
 
 Open source League of Legends Replay System. Done as a weekend project over two days. Doesn't hook or modify any memory so is 100% safe. However, due to this, some features like camera modifications and automatic replay saving cannot be implemented.
 
-A full version of LegendaryReplays can be found in [LegendaryClient](https://github.com/Snowl/LegendaryClient/tree/newUi), including replay anaylsis, item builds, important in-game events and more.
+A full version of LegendaryReplays can be found in [LegendaryClient](https://github.com/eddy5641/LegendaryClient/tree/Experements-Dev)
 
 <p align="center">
   <img src="http://puu.sh/6ytzR.jpg" alt="Screenshot"/>
