@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:LegendaryReplays.Elements"
+        xmlns:locale="clr-namespace:LegendaryReplays"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LegendaryReplays.MainWindow"
+        Title="LegendaryReplays" Height="600" Width="800" ResizeMode="CanMinimize">
+    <Grid Background="#ecf0f1" locale:FocusVisualTreeChanger.IsChanged="True">
+        <Grid x:Name="ReplayGrid" Opacity="0" d:IsHidden="True">
+            <Grid HorizontalAlignment="Stretch" Height="30" VerticalAlignment="Top" Background="#2c3e50" d:IsHidden="True">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/LegendaryReplays;component/noise.png" Viewport="0,0,100,100" ViewportUnits="Absolute" TileMode="Tile" Stretch="None" AlignmentX="Left" AlignmentY="Top"  />
+                    </Grid.Background>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal">
+                    <local:FadeLabel x:Name="ExitButton" Content="exit" Margin="5,0,0,0" MouseDown="ExitButton_MouseDown"/>
+                    <local:FadeLabel x:Name="SettingsButton" Content="settings" Margin="5,0,0,0" MouseDown="SettingsButton_MouseDown"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid x:Name="InputGrid" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" Width="420" d:IsHidden="True">
+                <Rectangle Fill="#FF474747" IsHitTestVisible="False" Height="30" VerticalAlignment="Bottom"/>
+                <local:WatermarkTextbox x:Name="SearchTextBox" Watermark="paste spectator command" Width="280" HorizontalAlignment="Left" d:IsHidden="True"/>
+                <Button x:Name="GetReplayButton" Width="120" Content="download replay" Background="#2c3e50" Opacity="0" Visibility="Hidden" HorizontalAlignment="Right" IsDefault="True" Click="GetReplayButton_Click" d:IsHidden="True" />
+            </Grid>
+            <Label x:Name="HintLabel" Content="retrieving replay" HorizontalAlignment="Center" Margin="0,60,365,0" VerticalAlignment="Top" FontStyle="Italic" Opacity="0" Foreground="#FF838383" d:IsHidden="True" />
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Stretch" Width="420" d:IsHidden="True">
+                <StackPanel x:Name="GamePanel" />
+            </ScrollViewer>
+
+            <Grid x:Name="ReplayOverviewGrid" Width="360" Margin="0,40,0,0" HorizontalAlignment="Right" Opacity="0" Visibility="Hidden" d:IsHidden="True">
+                <Button x:Name="WatchReplayButton" Content="Watch Replay" Background="#27ae60" HorizontalAlignment="Stretch" Margin="5,5,5,0" FontSize="16" Height="40" FontWeight="Bold" VerticalAlignment="Top" Foreground="White" Click="WatchReplayButton_Click" d:IsHidden="True" />
+                <Label x:Name="GameId" Content="0" HorizontalAlignment="Center" FontStyle="Italic" Margin="0,50,0,0" Foreground="#FF838383" VerticalAlignment="Top" d:IsHidden="True"/>
+                <Label x:Name="GameType" Content="classic" HorizontalAlignment="Center" FontStyle="Italic" Margin="0,50,0,0" Foreground="#FF838383" VerticalAlignment="Bottom" d:IsHidden="True"/>
+                <Label x:Name="GameTime" Content="0:00" HorizontalAlignment="Right"  Margin="0,50,5,0" FontStyle="Italic" Foreground="#FF838383" VerticalAlignment="Top" d:IsHidden="True"/>
+
+                <StackPanel Margin="0,80,0,0">
+                    <StackPanel x:Name="TeamOnePanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <Label Content="VS" HorizontalAlignment="Center" FontSize="30"/>
+                    <StackPanel x:Name="TeamTwoPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
