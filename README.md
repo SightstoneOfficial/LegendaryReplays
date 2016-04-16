@@ -26,3 +26,5 @@ Bugs
 * Currently only replays that have been recorded from the first minute can be watched
 
 * Tracking is kinda buggy and can result in client errors. This will be resolved in a feature update.
+
+will work on decyrpting packets
